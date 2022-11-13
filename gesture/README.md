@@ -1,0 +1,2 @@
+# gesture_recognition
+A gesture recognition based video player which stops when you make the sign of the number 0 with your hands and stops the video if you open your palm. Train.py file has been trained on a gesture recognition dataset and the handtracking.py uses opencv and mediapipe to track hands and pass the frames to the saved model for classification and stops or plays the video based on the action.
