@@ -215,6 +215,7 @@ def speech_main():
     emote = 0
     searchwrd = ''
     srwr = ""
+    anal = 0
     
     for i in range(NUM_GUESSES):
 
@@ -325,6 +326,11 @@ def speech_main():
         
             
         if(guess["transcription"]=="exit"):
+          
+                
+            
+            
+            
             if(media != ""):
 
                 cursor2.execute("""insert into analytics(Searchword , EMOTION , starttime , endtime , duration)VALUES("{song}" , {emote} , (SELECT * FROM tmstp) , CURRENT_TIMESTAMP() , CURRENT_TIMESTAMP() - (SELECT * FROM tmstp) );""".format(song = searchwrd , emote = emote))
@@ -417,6 +423,15 @@ def speech_main():
             a = Playlist.remove(playlist , guess["transcription"][7:] )#video play
             if not(a == ""):
                 printSomething(a)
+                
+                
+        if guess["transcription"].split()[0] =='analytics':
+            os.system(r"python C:\Users\Restandsleep\Desktop\VIT\Software_Engineering\Analytics.py")
+            anal = 1
+        
+        
+            
+            
             
         if guess["transcription"] =='bye':
             if(media != ""):
