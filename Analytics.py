@@ -7,6 +7,11 @@ import matplotlib
 import matplotlib.pyplot as plt
 import os
 import datetime
+import scatanal
+import emotanal
+
+
+
 my_w = tk.Tk()
 sv_ttk.use_dark_theme()
 my_w.geometry("400x250") 
@@ -58,42 +63,47 @@ query = "SELECT endtime FROM analytics"
 cursor.execute(query)
 endd = cursor.fetchall()
 
-daterange = pd.DataFrame(columns=["Time" , "Watching"])
-for x in range(0,len(startt)):
-   a = pd.date_range(startt[x][0],endd[x][0],freq='T').to_series()
-   for y in a:
-       daterange = daterange.append({"Time" : y , "Watching": 1 } , ignore_index= True)
-   if(x != len(startt)-1):
-       a = pd.date_range(endd[x][0],startt[x+1][0],freq='T').to_series()
-       for y in a:
-           daterange = daterange.append({"Time" : y , "Watching": 0 } , ignore_index= True)
+# daterange = pd.DataFrame(columns=["Time" , "Watching"])
+# for x in range(0,len(startt)):
+#    a = pd.date_range(startt[x][0],endd[x][0],freq='T').to_series()
+#    for y in a:
+#        daterange = daterange.append({"Time" : y , "Watching": 1 } , ignore_index= True)
+#    if(x != len(startt)-1):
+#        a = pd.date_range(endd[x][0],startt[x+1][0],freq='T').to_series()
+#        for y in a:
+#            daterange = daterange.append({"Time" : y , "Watching": 0 } , ignore_index= True)
        
-print(daterange)
+# print(daterange)
 
 
-fig, ax = plt.subplots()
+# fig, ax = plt.subplots()
 
-ax.plot(to_plot['daterange'], 'blue' , label = 'duration' )
-for tick in ax.get_xticklabels():
-    tick.set_rotation(45)
-ax.legend()
-plt.show()
-import mysql.connector
-import matplotlib.pyplot as plt  
-from tkinter import * 
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, 
-NavigationToolbar2Tk)
-import tkinter as tk
-import matplotlib
+# ax.plot(to_plot['daterange'], 'blue' , label = 'duration' )
+# for tick in ax.get_xticklabels():
+#     tick.set_rotation(45)
+# ax.legend()
+# plt.show()
+# import mysql.connector
+# import matplotlib.pyplot as plt  
+# from tkinter import * 
+# from matplotlib.figure import Figure
+# from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, 
+# NavigationToolbar2Tk)
+# import tkinter as tk
+# import matplotlib
 
-matplotlib.use('TkAgg')
+# matplotlib.use('TkAgg')
 
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_tkagg import (
-    FigureCanvasTkAgg,
-    NavigationToolbar2Tk
-)
+# from matplotlib.figure import Figure
+# from matplotlib.backends.backend_tkagg import (
+#     FigureCanvasTkAgg,
+#     NavigationToolbar2Tk
+# )
 
+appa = scatanal.anal()
+appe = emotanal.eanal()
 
-os.system(r"python C:\Users\Restandsleep\Desktop\VIT\Software_Engineering\emotanal.py")
+while(True):
+    appa.update()
+    appe.update()
+
