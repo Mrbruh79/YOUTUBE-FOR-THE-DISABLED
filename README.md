@@ -36,3 +36,5 @@ mediapipe
 ```
 ##### **Make sure these libraries are installed and configured in the python enviornment**
 
+Video presentation link:
+
