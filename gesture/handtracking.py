@@ -165,14 +165,14 @@ def main(media):
             if result == 0 and flag!=1:
                  media.pause()
                  flag=1
-            elif c==15:
+            elif c==7:
                 media.play()
                 flag=0
             if  result==18:
                 d+=1
             else:
                 d=0
-            if d==2:
+            if d==8:
                 break
          
     
