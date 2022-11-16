@@ -205,7 +205,7 @@ def speech_main():
     # show instructions and wait 3 seconds before starting the game
     # print(instructions)
     # time.sleep(2)
-    playlist = "playlist_1" 
+    playlist = "" 
     url = ""
     my_w = ""
     media = ""
@@ -282,7 +282,7 @@ def speech_main():
                 printresult(titles)   
                 srwr = "vid_name[6:]"
                 
-        if (guess["transcription"].split()[0]=="show") and (guess["transcription"].split()[1]=="search"):
+        if (guess["transcription"].split()[0]=="show") and len(guess["transcription"].split()) >1 :
                 printresult(titles)   
                 
                 
@@ -315,8 +315,6 @@ def speech_main():
                     continue
                 media = create_media(create_url(videoids[songnum]))
                 media.play()
-                cursor2.execute("update tmstp set x = current_timestamp();")
-                mydb2.commit()
                 printresult(titles)
                 printSomething("Currently playing {title}\n".format(title = titles[songnum]))
             else:
@@ -362,6 +360,7 @@ def speech_main():
                 media,url,searchwrd ,emote,videoids,titles = Emotion.emotion()#video play
                 print(media)
                 print(url)
+                media.play()
             else:
                 printSomething("Media is already is playing\n")
           
@@ -418,14 +417,14 @@ def speech_main():
         if guess["transcription"].split()[0] =='remove':
             print(guess["transcription"][8:])
             print(playlist,guess["transcription"][7:].replace(" ", "_") , url)
-            guess["transcription"][7:] = guess["transcription"][7:].replace(" ", "-")
-            guess["transcription"][7:] = guess["transcription"][7:].lower()
-            a = Playlist.remove(playlist , guess["transcription"][7:] )#video play
+            guess["transcription"] = guess["transcription"][7:].replace(" ", "-")
+            guess["transcription"] = guess["transcription"].lower()
+            a = Playlist.remove(playlist , guess["transcription"] )#video play
             if not(a == ""):
                 printSomething(a)
                 
                 
-        if guess["transcription"].split()[0] =='analytics':
+        if guess["transcription"].split()[0].lower() =='analytics':
             os.system(r"python C:\Users\Restandsleep\Desktop\VIT\Software_Engineering\Analytics.py")
             anal = 1
         
