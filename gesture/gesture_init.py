@@ -77,4 +77,6 @@ def play_from_speech(media):
     # Button Creation
     close = tkinter.Button(root,text = "Stop media", command = lambda:media.stop())
     close.pack()
+    ex = tkinter.Button(root,text = "EXIT", command = lambda:root.quit())
+    ex.pack()
     root.mainloop()
