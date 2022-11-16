@@ -37,4 +37,4 @@ mediapipe
 ##### **Make sure these libraries are installed and configured in the python enviornment**
 
 Video presentation link:
-
+https://vitacin-my.sharepoint.com/:f:/g/personal/arnav_bansal2020_vitstudent_ac_in/EqrUMcdBx2lEkKbwOw__j0cBoUiRxsiTbasrEGofv6JBwQ?e=SkD9G8
