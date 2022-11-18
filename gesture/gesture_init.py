@@ -1,6 +1,6 @@
 from tensorflow.keras.models import load_model
 
-model=load_model(r'C:\Users\Restandsleep\Desktop\VIT\Software_Engineering\gesture\weights.h5')
+model=load_model(r'weights.h5')
 
 import cv2
 import mediapipe as mp
