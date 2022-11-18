@@ -36,5 +36,10 @@ mediapipe
 ```
 ##### **Make sure these libraries are installed and configured in the python enviornment**
 
-Video presentation link:
+##### Please Configure all files as follows
+1.Add your API Key to STT.py , Emotion.py , handtracking.py for interacting with the Youtube API
+2.Configure your mySQL Databse and change the connecion username,password as necessary in the codefile or you could configure it to our settings 
+3.We have 3 databases playlist , analytics 
+
+##### Video presentation link:
 https://vitacin-my.sharepoint.com/:f:/g/personal/arnav_bansal2020_vitstudent_ac_in/EqrUMcdBx2lEkKbwOw__j0cBoUiRxsiTbasrEGofv6JBwQ?e=SkD9G8
