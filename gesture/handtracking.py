@@ -1,6 +1,6 @@
 from tensorflow.keras.models import load_model
 
-model=load_model(r'C:\Users\Restandsleep\Desktop\VIT\Software_Engineering\gesture\weights.h5')
+model=load_model(r'weights.h5')
 
 import cv2
 import mediapipe as mp
@@ -188,7 +188,7 @@ def play(q):
     global media
     
     if(q!="stop_media"):
-        api_key='AIzaSyC79AzFiIAIymIANLgbdxIrI_bN-tpXFMk' #enter your API key
+        api_key='' #enter your API key
         youtube=build('youtube','v3' , developerKey=api_key) #building the service object
         
         request = youtube.search().list(part='snippet',type='video',q=q,maxResults='40')#using the search instance method to search for songs(gives video IDs)
