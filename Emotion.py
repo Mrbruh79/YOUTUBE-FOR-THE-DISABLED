@@ -221,8 +221,9 @@ def emotion_gui():
     elif emotion == 'happy' or emotion == 'neutral' or emotion == 'surprise':
         song='Rock Music'
     
+   
         
-    api_key='AIzaSyC79AzFiIAIymIANLgbdxIrI_bN-tpXFMk' #enter your API key
+    api_key='' #enter your API key
     youtube=build('youtube','v3' , developerKey=api_key) #building the service object
     
     request = youtube.search().list(part='snippet',type='video',q=song,maxResults='40')#using the search instance method to search for songs(gives video IDs)
