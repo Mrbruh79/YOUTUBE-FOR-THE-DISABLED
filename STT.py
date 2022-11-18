@@ -145,7 +145,7 @@ def recognize_speech_from_mic(recognizer, microphone):
 
 
 def automateYoutube(song):
-    api_key='AIzaSyC79AzFiIAIymIANLgbdxIrI_bN-tpXFMk' #enter your API key
+    api_key='' #enter your API key
     youtube= build('youtube','v3' , developerKey=api_key) #building the service objec
     request = youtube.search().list(part='snippet',type='video',q=song,maxResults='10')#using the search instance method to search for songs(gives video IDs)
     response=request.execute()
