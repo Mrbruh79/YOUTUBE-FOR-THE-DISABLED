@@ -19,7 +19,7 @@ root.title("software engineering project")
 canvas = tkinter.Canvas(root,width=800 ,height=500)
 canvas.grid(columnspan=5)
 canvas.grid(rowspan=5)
-img = Image.open(r"C:\Users\Restandsleep\Desktop\VIT\Software_Engineering\youtube_logo_dark.jpg")
+img = Image.open(r"youtube_logo_dark.jpg")
 img = img.resize((200,125))
 
 abb = 0
@@ -30,14 +30,14 @@ def emotion2():
 
    
 def voice():
-    os.system(r"python C:\Users\Restandsleep\Desktop\VIT\Software_Engineering\STT.py")
+    os.system(r"python STT.py")
 
     
 def gesture():
     gesturein.gesture()
     
 def analytics():
-    os.system(r"python C:\Users\Restandsleep\Desktop\VIT\Software_Engineering\Analytics.py")
+    os.system(r"python Analytics.py")
 
 
     
