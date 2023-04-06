@@ -38,7 +38,7 @@ sv_ttk
 mediapipe
 ```
 ##### **Make sure these libraries are installed and configured in the python enviornment**
-
+##### **tensorflow gpu can be ignored if installing the latest version of tensorflow**
 ##### Please Configure all files as follows:
 1. Add your API Key to STT.py , Emotion.py , handtracking.py for interacting with the Youtube API
 2. Configure your mySQL Databse and change the connecion username,password as necessary in the codefile or you could configure it to our settings 
